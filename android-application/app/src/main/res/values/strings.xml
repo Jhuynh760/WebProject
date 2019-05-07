@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">FabflixMobile</string>
+    <string name="action_settings">Settings</string>
+
+    <color name="red">#FF0000</color>
+    <color name="blue">#0080FF</color>
+    <color name="green">#80FF00</color>
+
+    <string name="title_activity_blue"> The Blue Page </string>
+    <string name="title_activity_green"> The Green Page </string>
+    <string name="title_activity_login">Fabflix Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="loginTitle">Login</string>
+    <string name="title_activity_single_movie">SingleMovieActivity</string>
+    <string name="title_activity_search_bar">SearchBarActivity</string>
+    <string name="SearchString">Search</string>
+    <string name="SearchByMovieHint">Search Movie Names.</string>
+    <string name="SearchMovieTitlesString">Search Movies Titles</string>
+    <string name="title_activity_movies_list">MoviesListActivity</string>
+    <string name="NextString">Next</string>
+    <string name="PrevString">Prev</string>
+    <string name="dirText">Director:</string>
+    <string name="movieIdText">MovieId:</string>
+    <string name="movieYearText">Year:</string>
+    <string name="GenresText">Genres:</string>
+    <string name="StarsText">Stars:</string>
+    <string name="movieTItleText">"Title: "</string>
+    <string name="movieTitle">movieTitle</string>
+    <string name="movieDirText">Director:</string>
+    <string name="movieDir">movieDir</string>
+    <string name="movieYear">movieYear</string>
+    <string name="movieGenresText">Genres:</string>
+    <string name="movieGenres">movieGenres</string>
+    <string name="movieStarsText">Stars:</string>
+    <string name="movieStars">movieStars</string>
+</resources>

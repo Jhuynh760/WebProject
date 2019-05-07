@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+	<!-- Using jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- include jquery autocomplete JS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+
+    <!-- Bootstrap for CSS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="autocomplete.css">
+          
+          
+	
+<title>Fablix</title>
+
+</head>
+<body>
+	<a href="index.html" onclick="return reinitializePageInfo();">Home</a>
+	<Strong>Browse by: </Strong>
+	<a href="#genreBrowse" id = "jumpToBrowseBy">
+		Genre
+	</a> 
+	||
+	<a href="#alphabeticalBrowse" id = "jumpToBrowseBy">
+		Alphabetical Order
+	</a>
+	<input type="button" onclick="location.href = 'cart.html';" style="float: right;" value="Cart 0" id = "cartButton"><br/>
+	<a href="edashboard.html" style="visibility:hidden;" id="edashboard_link">EDashboard</a>
+	
+	<form id = "search_bar" method="get" action="#" >
+		<div style = "display: block; width: 95%;">
+			<input type = "text" placeholder="Full Text Search Bar" name = "fullTextSearchBar" id = "fullTextSearchBar" class="autocomplete-searchbox form-control"/>
+		</div>
+		<div style = "display: block; float: left;">
+			<input type = "submit" value = "Search" style = "height: 50px; width:100%"/>
+		</div>
+	
+		<div style = "display: block; width: 95%;">
+			<input type = "text" placeholder="Search Bar" name = "search_text" id = "search_text" class="autocomplete-searchbox form-control"/>
+		</div>
+		<div style = "display: block; float: left;">
+			<input type = "submit" value = "Search" style = "height: 50px; width:100%"/>
+		</div>
+		
+		Advanced Search By: <input type = "checkbox" name = "search_title" value = "true" id = "search_title"> Title ||
+				   <input type = "checkbox" name = "search_year" value = "true" id = "search_year"/> Year ||
+				   <input type = "checkbox" name = "search_director" value = "true" id = "search_director"> Director ||
+				   <input type = "checkbox" name = "search_star" value = "true" id = "search_star"/> Star <br>
+				   
+	    Advanced Sort By: <input type = "radio" name = "sortby" value = "TitleAsc" id = "titleasc"/>Title Asc ||
+	   			<input type = "radio" name = "sortby" value = "TitleDesc" id = "titledesc"/>Title Desc ||
+	   			<input type = "radio" name = "sortby" value = "RatingAsc" id = "ratingasc"/>Rating Asc ||
+	   			<input type = "radio" name = "sortby" value = "RatingDesc" id = "ratingdesc"/>Rating Desc
+	   			
+ 		<input type = "hidden" id="search_type" name="search_type" value = "search"/>
+ 		<input type = "hidden" id="hidden_search_query" name="hidden_search_query" value = "none"/>
+	</form>
+	
+	<h1>Movies</h1>
+	<input type = "button" value = "Prev Page" id = "prevPage" onclick = "return prevPage();">
+	<label id = "pageStr">Pg: </label>
+	<label id = "pageNum">1</label>
+	<input type = "button" value = "Next Page" id = "nextPage" onclick = "return nextPage();"><br>
+	<select id = "numPerPage" onchange="updateValues()">
+		<option value="5">5</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+		<option value="25">25</option>
+		<option value="50" selected="selected">50</option>
+		<option value="75">75</option>
+		<option value="100">100</option>
+	</select>
+	Per Page
+	<table id=movie_table class = "table table-striped">
+		<thread>
+			<tr>
+				<th>Rating</th>
+				<th>Movie Title</th>
+				<th>Year</th>
+				<th>Director</th>
+				<th>Genres</th>
+				<th>Stars</th>
+				<th>Add to Cart</th>
+			</tr>
+		</thread>
+		<tbody id = movie_table_body></tbody>
+	</table>
+	
+	<footer>
+		<center>
+			<strong>Browse By Genre:</strong>
+			<p id = "genreBrowse"></p>
+			<strong>Browse By Alphabetical Order:</strong>
+			<p id = "alphabeticalBrowse"></p>
+		</center>
+	</footer>
+	
+	
+	<!-- Load our own JS file -->
+	<!-- The path is relative to index.html, since these two files are in the same directory -->
+	<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
+	     otherwise the url is relative to the root path-->
+	<script src="index.js"></script>
+	
+</body>
+</html>

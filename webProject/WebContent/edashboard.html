@@ -1,0 +1,94 @@
+<!-- This page will be redirected from any url if you are not logged in -->
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+		content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fablix Edashboard</title>
+    
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<style>
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow: scroll;
+  padding-bottom: 20px;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  padding-left:20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav {padding-bottom: 15px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidenav">
+  <div id="table_metadata" style="color: #FFFFFF;"></div>
+</div>
+
+<div class = "main">
+	<a href="index.html" style='font-size:20px;'>Home</a>
+	<h2>Employee Dashboard</h2>
+	<!-- Set the method to POST to avoid showing the username/password in the URL
+	     The default action is disabled to allow your own implementation. -->
+		<div id="add_star_error_message" style="color: #ff0000;"></div>
+		<div id="add_star_success_message" style="color: #1a8e13;"></div>
+			     
+		<form id="add_star_form" method="post" action="#">
+			<div style = 'font-size: 25px'><b><u>Add Star Form</u></b></div>	
+		    <label style = 'font-size:20px; padding-right: 40px;'><b>Name:</b></label>
+		    <input type="text" placeholder="First and Last name" size = "20px" name="star_name" id = "star_name">
+		    <br>
+		    <label style = 'font-size:20px;'><b>Birth Year:</b></label>
+		    <input type="number" placeholder="Birth year (optional)" min="0" name="star_birth_year" id = "star_birth_year">
+		    <br>
+		    <input type="submit" value="Add Star">
+		</form>
+		
+		<br>
+		
+		<div id="add_movie_error_message" style="color: #ff0000;"></div>
+		<div id="add_movie_success_message" style="color: #1a8e13;"></div>
+		<div id="linked_star_to_movie_message" style="color: #1a8e13;"></div>
+		<div id="linked_genre_to_movie_message" style="color: #1a8e13;"></div>
+		<form id="add_movie_form" method="post" action="#">
+			<div style = 'font-size: 25px'><b><u>Add Movie Form</u></b></div>	
+		    <label style = 'font-size:20px; padding-right: 47px;'><b>Title:</b></label> <input type="text" placeholder="Movie Title" size = "20px" name="movie_title" id = "movie_title"><br>
+		    
+		    <label style = 'font-size:20px; padding-right: 47px'><b>Year:</b></label> <input type="number" placeholder="Movie year" min="0" name="movie_year" id = "movie_year"><br>
+		    
+		    <label style = 'font-size:20px; padding-right: 22px'><b>Director:</b></label><input type="text" placeholder="Movie Director" size = "20px" name="movie_director" id = "movie_director"><br>
+		    
+		    <label style = 'font-size:20px; padding-right: 2px'><b>Star Name:</b></label><input type="text" placeholder="Star Name (Optional)" size = "20px" name="link_star_to_movie" id = "link_star_to_movie"><br>
+		    
+		    <label style = 'font-size:20px; padding-right: 42px'><b>Genre:</b></label><input type="text" placeholder="Genre (Optional)" size = "20px" name="link_genre_to_movie" id = "link_genre_to_movie"><br>
+		    <input type="submit" value="Add Movie">
+		</form>
+		<!-- include jQuery-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<!-- include our own JS file -->
+		<script src="edashboard.js"></script>
+</div>
+
+
+</body>
+</html>
